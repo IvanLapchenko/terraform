@@ -1,0 +1,37 @@
+expose:
+  type: loadBalancer
+  tls:
+    enabled: false
+
+persistence:
+  enabled: true
+
+notary:
+  enabled: false
+
+trivy:
+  enabled: false
+
+database:
+  type: external
+  external:
+    host: bitnami-pg-postgresql.pg-namespace.svc.cluster.local
+    port: 5432
+    username: postgres
+    password: r8R63g6qNJ
+    coreDatabaseName: postgres
+    clairDatabaseName: your-clair-database-name
+  externalURL: "bitnami-pg-postgresql.pg-namespace.svc.cluster.local"
+
+redis:
+  type: external
+  external:
+    addr: "redis://user:@rfr-redis-0.rfr-redis.redis-namespace.svc.cluster.local:6379"
+    password: admin
+    db: 0
+
+nginx:
+  enabled: false
+
+ingress:
+  enabled: false
