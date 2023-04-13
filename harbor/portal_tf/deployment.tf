@@ -43,11 +43,11 @@ resource "kubernetes_deployment" "harbor_portal" {
             container_port = 8080
           }
 
-          # volume_mount {
-          #   name       = "portal-config"
-          #   mount_path = "/etc/nginx/nginx.conf"
-          #   sub_path   = "nginx.conf"
-          # }
+          volume_mount {
+            name       = "portal-config"
+            mount_path = "/etc/nginx/nginx.conf"
+            sub_path   = "nginx.conf"
+          }
 
           liveness_probe {
             http_get {
